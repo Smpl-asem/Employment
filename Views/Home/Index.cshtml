@@ -1,0 +1,1120 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="fa" class="light-style layout-menu-fixed" dir="rtl" data-theme="theme-default"
+    data-assets-path="../../assets/" data-template="horizontal-menu-template-no-customizer">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+    <title>درخواست استخدام | ایلیا استیل</title>
+
+    <meta name="description" content="">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="../../assets/vendor/fonts/boxicons.css">
+    <link rel="stylesheet" href="../../assets/vendor/fonts/fontawesome.css">
+    <link rel="stylesheet" href="../../assets/vendor/fonts/flag-icons.css">
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="../../assets/vendor/css/rtl/core.css">
+    <link rel="stylesheet" href="../../assets/vendor/css/rtl/theme-default.css">
+    <link rel="stylesheet" href="../../assets/css/demo.css">
+    <link rel="stylesheet" href="../../assets/vendor/css/rtl/rtl.css">
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="../../assets/vendor/libs/typeahead-js/typeahead.css">
+    <link rel="stylesheet" href="../../assets/vendor/libs/bs-stepper/bs-stepper.css">
+    <link rel="stylesheet" href="../../assets/vendor/libs/bootstrap-select/bootstrap-select.css">
+    <link rel="stylesheet" href="../../assets/vendor/libs/select2/select2.css">
+    <link rel="stylesheet" href="../../assets/vendor/libs/flatpickr/flatpickr.css">
+
+    <!-- Page CSS -->
+
+    <!-- Helpers -->
+    <script src="../../assets/vendor/js/helpers.js"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="../../assets/js/config.js"></script>
+
+</head>
+
+<body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-navbar-full layout-horizontal layout-without-menu">
+        <div class="layout-container">
+            <!-- Navbar -->
+
+            <nav class="layout-navbar navbar navbar-expand-xl align-items-center bg-navbar-theme" id="layout-navbar">
+                <div class="container-xxl">
+                    <div class="navbar-brand app-brand demo d-none d-xl-flex py-0 me-4">
+                        <div class="app-brand-logo" style="width:140px">
+                            <img src="/assets/img/backgrounds/ilia2.png" alt="brand-logo" class="img-fluid">
+                        </div>
+
+                        <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-xl-none">
+                            <i class="bx bx-x bx-sm align-middle"></i>
+                        </a>
+                    </div>
+
+                    <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+                        <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                            <i class="bx bx-menu bx-sm"></i>
+                        </a>
+                    </div>
+
+                    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                        <ul class="navbar-nav flex-row align-items-center ms-auto">
+                            <!-- User -->
+                            <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                                <span class="text-dark"> تاریخ جاری سیستم : @DateTime.Now.ToPersianDate() </span>
+                            </li>
+                            <!--/ User -->
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- / Navbar -->
+
+            <!-- Layout container -->
+            <div class="layout-page">
+                <!-- Content wrapper -->
+                <div class="content-wrapper">
+
+                    <!-- Content -->
+
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        <div class="col-12">
+                            <small class="text-light fw-semibold lh-2">فرم استخدامی</small>
+                            @if (ViewBag.error != null)
+                            {
+                                <div class="alert alert-solid-danger alert-dismissible d-flex align-items-center"
+                                    role="alert">
+                                    <i class="bx bx-xs bx-error me-2"></i>
+                                    @ViewBag.error
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                                </div>
+                            }
+                            @if (ViewBag.Result != null)
+                            {
+                                <div class="alert alert-solid-success" role="alert">
+                                    @ViewBag.Result
+                                </div>
+                            }
+                            <div class="bs-stepper wizard-vertical vertical wizard-vertical-icons-example mt-2">
+                                <div class="bs-stepper-header">
+                                    <div class="step" data-target="#personal-data">
+                                        <button type="button" class="step-trigger">
+                                            <span class="bs-stepper-circle">
+                                                <i class="bx bx-user"></i>
+                                            </span>
+                                            <span class="bs-stepper-label">
+                                                <span class="bs-stepper-title">اطلاعات شخصی</span>
+                                                <span class="bs-stepper-subtitle">افزودن اطلاعات شخصی</span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <div class="line"></div>
+                                    <div class="step" data-target="#family-data">
+                                        <button type="button" class="step-trigger">
+                                            <span class="bs-stepper-circle">
+                                                <i class="bx bx-user"></i>
+                                            </span>
+                                            <span class="bs-stepper-label">
+                                                <span class="bs-stepper-title">مشخصات بستگان</span>
+                                                <span class="bs-stepper-subtitle">افزودن اطلاعات بستگان</span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <div class="line"></div>
+                                    <div class="step" data-target="#study-data">
+                                        <button type="button" class="step-trigger">
+                                            <span class="bs-stepper-circle">
+                                                <i class="bx bx-user"></i>
+                                            </span>
+                                            <span class="bs-stepper-label">
+                                                <span class="bs-stepper-title">مشخصات تحصیلی</span>
+                                                <span class="bs-stepper-subtitle">افزودن مدارک تحصیلی</span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <div class="line"></div>
+                                    <div class="step" data-target="#abilities">
+                                        <button type="button" class="step-trigger">
+                                            <span class="bs-stepper-circle">
+                                                <i class="bx bx-detail"></i>
+                                            </span>
+                                            <span class="bs-stepper-label">
+                                                <span class="bs-stepper-title">توانایی و قابلیت ها</span>
+                                                <span class="bs-stepper-subtitle">انتخاب توانایی و قابلیت ها</span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <div class="line"></div>
+                                    <div class="step" data-target="#workHistory">
+                                        <button type="button" class="step-trigger">
+                                            <span class="bs-stepper-circle">
+                                                <i class="bx bxl-instagram"></i>
+                                            </span>
+                                            <span class="bs-stepper-label">
+                                                <span class="bs-stepper-title">سوابق کاری</span>
+                                                <span class="bs-stepper-subtitle">افزودن اطلاعات کاری</span>
+                                            </span>
+                                        </button>
+                                    </div>
+
+                                </div>
+                                <div class="bs-stepper-content">
+                                    <form class="mb-3" action="/home/index" method="POST" enctype="multipart/form-data">
+                                        <div id="personal-data" class="content">
+                                            <div class="content-header mb-3">
+                                                <h6 class="mb-1">اطلاعات شخصی</h6>
+                                                <small>اطلاعات شخصی خود را وارد کنید.</small>
+                                            </div>
+                                            <div class="row g-3">
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="jobName">عنوان شغلی مورد
+                                                        تقاضا</label>
+                                                    <input type="text" id="jobName" class="form-control text-start"
+                                                        dir="ltr" placeholder="عنوان شغلی مورد تقاضا را وارد کنید"
+                                                        required name="wishedJob">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="jobFind">نحوه آشنایی</label>
+                                                    <select id="jobFind" class="selectpicker w-100"
+                                                        data-style="btn-default" required name="howFind">
+                                                        <option value="" selected disabled>انتخاب</option>
+                                                        <option value="جاب ویژن">جاب ویژن</option>
+                                                        <option value="جابینجا">جابینجا</option>
+                                                        <option value="سایت دیوار">سایت دیوار</option>
+                                                        <option value="معرف">معرف</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="first-name">نام</label>
+                                                    <input type="text" id="first-name" class="form-control"
+                                                        placeholder="نام خود را وارد کنید" required name="FirstName">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="last-name">نام خانوادگی</label>
+                                                    <input type="text" id="last-name" class="form-control"
+                                                        placeholder="نام خانوادگی خود را وارد کنید" required
+                                                        name="LastName">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="father-name">نام پدر</label>
+                                                    <input type="text" id="father-name" class="form-control"
+                                                        placeholder="نام پدر خود را وارد کنید" required
+                                                        name="FatherName">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="codeMeli">شماره ملی</label>
+                                                    <input type="text" id="codeMeli" class="form-control"
+                                                        placeholder="شماره ملی خود را وارد کنید" required
+                                                        name="CodeMeli">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="sodor">محل صدور</label>
+                                                    <input type="text" id="sodor" class="form-control"
+                                                        placeholder="محل صدور شناسنامه خود را وارد کنید" required
+                                                        name="MahaleSodor">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label d-block" for="flatpickr-date">تاریخ
+                                                        تولد</label>
+                                                    <input type="text" class="form-control" placeholder="YYYY/MM/DD"
+                                                        id="flatpickr-date" required name="BirthDay">
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="codeMeli">ملیت</label>
+                                                    <input type="text" id="codeMeli" class="form-control"
+                                                        placeholder="ملیت خود را وارد کنید" required name="Meliat">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="codeMeli">دین</label>
+                                                    <input type="text" id="codeMeli" class="form-control"
+                                                        placeholder="دین خود را وارد کنید" required name="Din">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="codeMeli">تعداد افراد تحت
+                                                        تکفل</label>
+                                                    <input type="text" id="codeMeli" class="form-control"
+                                                        placeholder="تعداد افراد تحت تکفل خود را وارد کنید" required
+                                                        name="AfradTafakol">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label">وضعیت تاهل</label>
+                                                    <div class="form-check mt-1">
+                                                        <input class="form-check-input" type="radio" name="isSingle"
+                                                            id="plCommonAreaRadioYes" checked>
+                                                        <label class="form-check-label"
+                                                            for="plCommonAreaRadioYes">مجرد</label>
+                                                    </div>
+                                                    <div class="form-check mt-1">
+                                                        <input class="form-check-input" type="radio" name="isSingle"
+                                                            id="plCommonAreaRadioNo">
+                                                        <label class="form-check-label"
+                                                            for="plCommonAreaRadioNo">متاهل</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="codeMeli">تعداد فرزند</label>
+                                                    <input type="text" id="codeMeli" class="form-control"
+                                                        placeholder="تعداد فرزندان خود را وارد کنید" required
+                                                        name="ChildNum">
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <label class="form-label">مصرف دخانیات</label>
+                                                    <div class="form-check mt-1">
+                                                        <input class="form-check-input" type="radio" name="isTobacco"
+                                                            id="dokhaniat-no" checked>
+                                                        <label class="form-check-label" for="dokhaniat-no">ندارم</label>
+                                                    </div>
+                                                    <div class="form-check mt-1">
+                                                        <input class="form-check-input" type="radio" name="isTobacco"
+                                                            id="dokhaniat-yes">
+                                                        <label class="form-check-label" for="dokhaniat-yes">دارم</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="codeMeli">وضعیت نظام وظیفه</label>
+                                                    <select id="selectpickerBasic" class="selectpicker w-100"
+                                                        data-style="btn-default" required name="Sarbazi">
+                                                        <option value="" disabled selected>انتخاب کنید...</option>
+                                                        <option value="خانم هستم">خانم هستم</option>
+                                                        <option value="پایان خدمت">پایان خدمت</option>
+                                                        <option value="درحال خدمت">درحال خدمت</option>
+                                                        <option value="عدم انجام خدمت">عدم انجام خدمت</option>
+                                                        <option value="معافیت تحصیلی">معافیت تحصیلی</option>
+                                                        <option value="معافیت کفالت">معافیت کفالت</option>
+                                                        <option value="معافیت پزشکی">معافیت پزشکی</option>
+                                                        <option value="معافیت شرایط خاص">معافیت شرایط خاص</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <label class="form-label">گواهینامه رانندگی</label>
+                                                    <div class="form-check mt-1">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="GovahiRanandegi" id="govahi-yes" checked>
+                                                        <label class="form-check-label" for="govahi-yes">دارم</label>
+                                                    </div>
+                                                    <div class="form-check mt-1">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="GovahiRanandegi" id="govahi-no">
+                                                        <label class="form-check-label" for="govahi-no">ندارم</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="codeMeli">شماره تماس ثابت</label>
+                                                    <input type="text" id="codeMeli" class="form-control"
+                                                        placeholder="مثلا: 02188556307" required name="phoneSabet">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="codeMeli">شماره موبایل</label>
+                                                    <input type="text" id="codeMeli" class="form-control"
+                                                        placeholder="مثلا: 09124758697" required name="phone">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="codeMeli">شماره تماس اضطراری /
+                                                        نسبت</label>
+                                                    <input type="text" id="codeMeli" class="form-control"
+                                                        placeholder="مثلا: 09124758697 / پدرم" required name="phoneSos">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="codeMeli">پست الکترونیک
+                                                        (ایمیل)</label>
+                                                    <input type="email" id="codeMeli" class="form-control"
+                                                        placeholder="Email Address" name="Email">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="codeMeli">آدرس محل سکونت</label>
+                                                    <textarea id="address" class="form-control w-100" rows="4"
+                                                        placeholder="آدرس محل سکونت خود را اینجا وارد کنید" required
+                                                        name="Address"></textarea>
+                                                </div>
+
+
+
+                                                <div class="col-12 d-flex justify-content-between">
+                                                    <button class="btn btn-label-secondary btn-prev" disabled>
+                                                        <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                                                        <span class="d-sm-inline-block d-none">قبلی</span>
+                                                    </button>
+                                                    <button class="btn btn-primary btn-next">
+                                                        <span class="d-sm-inline-block d-none me-sm-1">بعدی</span>
+                                                        <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="family-data" class="content">
+                                            <div class="content-header mb-3">
+                                                <h6 class="mb-1">مشخصات بستگان درجه یک</h6>
+                                                <small>اطلاعات را کامل کنید.</small>
+                                            </div>
+                                            <div class="row g-3">
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="father-name">نام و نام
+                                                        خانوادگی</label>
+                                                    <input type="text" id="father-name" class="form-control"
+                                                        placeholder="نام و نام خانوادگی را وارد کنید" required
+                                                        name="FatherFullName">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="father-rel">نسبت</label>
+                                                    <select id="father-rel" class="selectpicker w-100"
+                                                        data-style="btn-default" disabled>
+                                                        <option selected>پدر</option>
+                                                        <option>مادر</option>
+                                                        <option>همسر</option>
+                                                        <option>برادر</option>
+                                                        <option>خواهر</option>
+
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="father-job">شغل</label>
+                                                    <input type="text" id="father-job" class="form-control"
+                                                        placeholder="شغل را وارد کنید" required name="FatherJob">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="father-study">تحصیلات</label>
+                                                    <input type="text" id="father-study" class="form-control"
+                                                        placeholder="مدرک تحصیلی را وارد کنید" required
+                                                        name="FatherStudy">
+                                                </div>
+                                                <hr>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="mother-name">نام و نام
+                                                        خانوادگی</label>
+                                                    <input type="text" id="mother-name" class="form-control"
+                                                        placeholder="نام و نام خانوادگی را وارد کنید" required
+                                                        name="MotherFullName">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="mother-rel">نسبت</label>
+                                                    <select id="mother-rel" class="selectpicker w-100"
+                                                        data-style="btn-default" disabled>
+                                                        <option>پدر</option>
+                                                        <option selected>مادر</option>
+                                                        <option>همسر</option>
+                                                        <option>برادر</option>
+                                                        <option>خواهر</option>
+
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="mother-job">شغل</label>
+                                                    <input type="text" id="mother-job" class="form-control"
+                                                        placeholder="شغل را وارد کنید" required name="MoterJob">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="mother-study">تحصیلات</label>
+                                                    <input type="text" id="mother-study" class="form-control"
+                                                        placeholder="مدرک تحصیلی را وارد کنید" required
+                                                        name="MotherStudy">
+                                                </div>
+                                                <hr>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="r1-name">نام و نام خانوادگی</label>
+                                                    <input type="text" id="r1-name" class="form-control"
+                                                        placeholder="نام و نام خانوادگی را وارد کنید"
+                                                        name="rel1Fullname">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="r1-rel">نسبت</label>
+                                                    <select id="r1-rel" class="selectpicker w-100"
+                                                        data-style="btn-default" name="rel1Rel">
+                                                        <option value="" disabled selected>انتخاب کنید...</option>
+                                                        <option value="همسر">همسر</option>
+                                                        <option value="برادر">برادر</option>
+                                                        <option value="خواهر">خواهر</option>
+
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="r1-job">شغل</label>
+                                                    <input type="text" id="r1-job" class="form-control"
+                                                        placeholder="شغل را وارد کنید" name="rel1Job">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="r1-study">تحصیلات</label>
+                                                    <input type="text" id="r1-study" class="form-control"
+                                                        placeholder="مدرک تحصیلی را وارد کنید" name="rel1Study">
+                                                </div>
+                                                <hr>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="r2-name">نام و نام خانوادگی</label>
+                                                    <input type="text" id="r2-name" class="form-control"
+                                                        placeholder="نام و نام خانوادگی را وارد کنید"
+                                                        name="rel2Fullname">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="r2-rel">نسبت</label>
+                                                    <select id="r2-rel" class="selectpicker w-100"
+                                                        data-style="btn-default" name="rel2Rel">
+                                                        <option value="" disabled selected>انتخاب کنید...</option>
+                                                        <option value="همسر">همسر</option>
+                                                        <option value="برادر">برادر</option>
+                                                        <option value="خواهر">خواهر</option>
+
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="r2-job">شغل</label>
+                                                    <input type="text" id="r2-job" class="form-control"
+                                                        placeholder="شغل را وارد کنید" name="rel2Job">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="r2-study">تحصیلات</label>
+                                                    <input type="text" id="r2-study" class="form-control"
+                                                        placeholder="مدرک تحصیلی را وارد کنید" name="rel2Study">
+                                                </div>
+
+                                                <hr>
+                                                <small><b>آشنایان (غیر فامیل)</b></small>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="f1-name">نام و نام خانوادگی</label>
+                                                    <input type="text" id="f1-name" class="form-control"
+                                                        placeholder="نام و نام خانوادگی را وارد کنید" required
+                                                        name="friendFullName">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="f1-rel">نسبت</label>
+                                                    <input type="text" id="f1-rel" class="form-control"
+                                                        placeholder="نسبت را انتخاب کنید" required name="friendRel">
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="r2-job">شغل</label>
+                                                    <input type="text" id="r2-job" class="form-control"
+                                                        placeholder="شغل را وارد کنید" required name="friendJob">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="r2-study">شماره تماس</label>
+                                                    <input type="text" id="r2-study" class="form-control"
+                                                        placeholder="شماره تماس فرد مذکور را وارد کنید" required
+                                                        name="friendPhone">
+                                                </div>
+
+
+                                                <div class="col-12 d-flex justify-content-between">
+                                                    <button class="btn btn-primary btn-prev">
+                                                        <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                                                        <span class="d-sm-inline-block d-none">قبلی</span>
+                                                    </button>
+                                                    <button class="btn btn-primary btn-next">
+                                                        <span class="d-sm-inline-block d-none me-sm-1">بعدی</span>
+                                                        <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="study-data" class="content">
+                                            <div class="content-header mb-3">
+                                                <h6 class="mb-1">مشخصات تحصیلی</h6>
+                                                <small>اطلاعات را کامل کنید.</small>
+                                            </div>
+                                            <div class="row g-3">
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="study1-name">سوابق تحصیلی</label>
+                                                    <input type="text" id="father-name" class="form-control"
+                                                        placeholder="رشته / گرایش تحصیلی خود را وارد کنید" required
+                                                        name="studyHistory">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="study1-lvl">مقطع تحصیلی</label>
+                                                    <select id="study1-lvl" class="selectpicker w-100"
+                                                        data-style="btn-default" required name="studylvl">
+                                                        <option value="" disabled selected>انتخاب کنید...</option>
+                                                        <option value="">انتخاب مقطع تحصیلی</option>
+                                                        <option value="زیر دیپلم">زیر دیپلم</option>
+                                                        <option value="دیپلم">دیپلم</option>
+                                                        <option value="کاردانی">کاردانی</option>
+                                                        <option value="کارشناسی">کارشناسی</option>
+                                                        <option value="کارشناسی ارشد">کارشناسی ارشد</option>
+                                                        <option value="دکترا">دکترا</option>
+
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="study1-place">محل تحصیل</label>
+                                                    <input type="text" id="study1-place" class="form-control"
+                                                        placeholder="محل تحصیل خود را وارد کنید" required
+                                                        name="studyScholl">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label d-block" for="study1-date">تاریخ
+                                                        پایان</label>
+                                                    <input type="text" class="form-control" placeholder="YYYY/MM/DD"
+                                                        id="study1-date" required name="studyFinish">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="study1-score">معدل</label>
+                                                    <input type="text" id="study1-score" class="form-control"
+                                                        placeholder="معدل خود را وارد کنید" required name="studyScore">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label">آیا همجنان مشغول به تحصیل هستید
+                                                        ؟</label>
+                                                    <div class="form-check mt-1">
+                                                        <input class="form-check-input" type="radio" name="isStuding"
+                                                            id="stillStudyYes" checked>
+                                                        <label class="form-check-label" for="stillStudyYes">بله</label>
+                                                    </div>
+                                                    <div class="form-check mt-1">
+                                                        <input class="form-check-input" type="radio" name="isStuding"
+                                                            id="stillStudyNo">
+                                                        <label class="form-check-label" for="stillStudyNo">خیر</label>
+                                                    </div>
+                                                </div>
+                                                <hr>
+
+                                                <div class="row g-3">
+                                                    <div class="col-sm-6">
+                                                        <label class="form-label" for="study2-name">سوابق تحصیلی</label>
+                                                        <input type="text" id="study2-name" class="form-control"
+                                                            placeholder="رشته / گرایش تحصیلی خود را وارد کنید"
+                                                            name="study2History">
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label class="form-label" for="study2-lvl">مقطع تحصیلی</label>
+                                                        <select id="study2-lvl" class="selectpicker w-100"
+                                                            data-style="btn-default" name="study2lvl">
+                                                            <option value="" disabled selected>انتخاب کنید...</option>
+                                                            <option value="">انتخاب مقطع تحصیلی</option>
+                                                            <option value="زیر دیپلم">زیر دیپلم</option>
+                                                            <option value="دیپلم">دیپلم</option>
+                                                            <option value="کاردانی">کاردانی</option>
+                                                            <option value="کارشناسی">کارشناسی</option>
+                                                            <option value="کارشناسی ارشد">کارشناسی ارشد</option>
+                                                            <option value="دکترا">دکترا</option>
+
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label class="form-label" for="study2-place">محل تحصیل</label>
+                                                        <input type="text" id="study2-place" class="form-control"
+                                                            placeholder="محل تحصیل خود را وارد کنید"
+                                                            name="study2Scholl">
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label class="form-label d-block" for="study2-date">تاریخ
+                                                            پایان</label>
+                                                        <input type="text" class="form-control" placeholder="YYYY/MM/DD"
+                                                            id="study2-date" name="study2Finish">
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label class="form-label" for="study2-score">معدل</label>
+                                                        <input type="text" id="study2-score" class="form-control"
+                                                            placeholder="معدل خود را وارد کنید" name="study2Score">
+                                                    </div>
+
+
+                                                    <div class="col-12 d-flex justify-content-between">
+                                                        <button class="btn btn-primary btn-prev">
+                                                            <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                                                            <span class="d-sm-inline-block d-none">قبلی</span>
+                                                        </button>
+                                                        <button class="btn btn-primary btn-next">
+                                                            <span class="d-sm-inline-block d-none me-sm-1">بعدی</span>
+                                                            <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="abilities" class="content">
+                                            <div class="content-header mb-3">
+                                                <h6 class="mb-1">قابلیت ها و توانایی</h6>
+                                                <small>اطلاعات مربوط به زبان خارجه</small>
+                                            </div>
+                                            <div class="row g-3">
+                                                <div class="col-sm-3">
+                                                    <label class="form-label" for="lang1-name">نام زبان</label>
+                                                    <input type="text" id="lang1-name" class="form-control text-start"
+                                                        placeholder="نام زبان خارجه را وارد کنید" dir="ltr"
+                                                        value="انگلیسی" disabled>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label class="form-label" for="lang1-con">مکالمه</label>
+                                                    <select id="lang1-con" class="selectpicker w-100"
+                                                        data-style="btn-default" name="englishConv">
+                                                        <option value="" disabled selected>انتخاب کنید...</option>
+                                                        <option value="ضعیف">ضعیف</option>
+                                                        <option value="متوسط">متوسط</option>
+                                                        <option value="خوب">خوب</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label class="form-label" for="lang1-write">نگارش</label>
+                                                    <select id="lang1-write" class="selectpicker w-100"
+                                                        data-style="btn-default" name="englishWrite">
+                                                        <option value="" disabled selected>انتخاب کنید...</option>
+                                                        <option value="ضعیف">ضعیف</option>
+                                                        <option value="متوسط">متوسط</option>
+                                                        <option value="خوب">خوب</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label class="form-label" for="lang1-under">درک مطلب</label>
+                                                    <select id="lang1-under" class="selectpicker w-100"
+                                                        data-style="btn-default" name="englishUndrestand">
+                                                        <option value="" disabled selected>انتخاب کنید...</option>
+                                                        <option value="ضعیف">ضعیف</option>
+                                                        <option value="متوسط">متوسط</option>
+                                                        <option value="خوب">خوب</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label class="form-label" for="lang1-name">نام زبان</label>
+                                                    <input type="text" id="lang1-name" class="form-control text-start"
+                                                        placeholder="نام زبان خارجه را وارد کنید" dir="ltr"
+                                                        name="langName">
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label class="form-label" for="lang1-con">مکالمه</label>
+                                                    <select id="lang1-con" class="selectpicker w-100"
+                                                        data-style="btn-default" name="LangConv">
+                                                        <option value="" disabled selected>انتخاب کنید...</option>
+                                                        <option value="ضعیف">ضعیف</option>
+                                                        <option value="متوسط">متوسط</option>
+                                                        <option value="خوب">خوب</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label class="form-label" for="lang1-write">نگارش</label>
+                                                    <select id="lang1-write" class="selectpicker w-100"
+                                                        data-style="btn-default" name="langWrite">
+                                                        <option value="" disabled selected>انتخاب کنید...</option>
+                                                        <option value="ضعیف">ضعیف</option>
+                                                        <option value="متوسط">متوسط</option>
+                                                        <option value="خوب">خوب</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label class="form-label" for="lang1-under">درک مطلب</label>
+                                                    <select id="lang1-under" class="selectpicker w-100"
+                                                        data-style="btn-default" name="langUnderstand">
+                                                        <option value="" disabled selected>انتخاب کنید...</option>
+                                                        <option value="ضعیف">ضعیف</option>
+                                                        <option value="متوسط">متوسط</option>
+                                                        <option value="خوب">خوب</option>
+                                                    </select>
+                                                </div>
+                                                <hr>
+                                                <small><b>دوره های تخصصی و عمومی</b></small>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="corse1-name">عنوان دوره</label>
+                                                    <input type="text" id="corse1-name" class="form-control"
+                                                        placeholder="عنوان دوره خود را وارد کنید" name="corse1Name">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="corse1-time">مدت زمان دوره</label>
+                                                    <input type="text" id="corse1-time" class="form-control"
+                                                        placeholder="مدت زمان دوره را وارد کنید" name="corse1Time">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="corse2-name">عنوان دوره</label>
+                                                    <input type="text" id="corse2-name" class="form-control"
+                                                        placeholder="عنوان دوره خود را وارد کنید" name="corse2Name">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="corse2-time">مدت زمان دوره</label>
+                                                    <input type="text" id="corse2-time" class="form-control"
+                                                        placeholder="مدت زمان دوره را وارد کنید" name="corse2Time">
+                                                </div>
+                                                <hr>
+                                                <small><b>آشنایی با نرم افزار ها</b></small>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="softwere1-name">نام نرم افزار</label>
+                                                    <input type="text" id="softwere1-name" class="form-control"
+                                                        placeholder="نام نرم افزار را وارد کنید" name="soft1Name">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="softwere1-lvl">میزان تسلط</label>
+                                                    <select id="softwere1-lvl" class="selectpicker w-100"
+                                                        data-style="btn-default" name="soft1lvl">
+                                                        <option value="" disabled selected>انتخاب کنید...</option>
+                                                        <option value="ضعیف">ضعیف</option>
+                                                        <option value="متوسط">متوسط</option>
+                                                        <option value="خوب">خوب</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="softwere2-name">نام نرم افزار</label>
+                                                    <input type="text" id="softwere2-name" class="form-control"
+                                                        placeholder="نام نرم افزار را وارد کنید" name="soft2Name">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="softwere2-lvl">میزان تسلط</label>
+                                                    <select id="softwere2-lvl" class="selectpicker w-100"
+                                                        data-style="btn-default" name="soft2lvl">
+                                                        <option value="" disabled selected>انتخاب کنید...</option>
+                                                        <option value="ضعیف">ضعیف</option>
+                                                        <option value="متوسط">متوسط</option>
+                                                        <option value="خوب">خوب</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="softwere3-name">نام نرم افزار</label>
+                                                    <input type="text" id="softwere3-name" class="form-control"
+                                                        placeholder="نلم نرم افزار را وارد کنید" name="soft3Name">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="softwere3-lvl">میزان تسلط</label>
+                                                    <select id="softwere3-lvl" class="selectpicker w-100"
+                                                        data-style="btn-default" name="soft3lvl">
+                                                        <option value="" disabled selected>انتخاب کنید...</option>
+                                                        <option value="ضعیف">ضعیف</option>
+                                                        <option value="متوسط">متوسط</option>
+                                                        <option value="خوب">خوب</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-12 d-flex justify-content-between">
+                                                    <button class="btn btn-primary btn-prev">
+                                                        <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                                                        <span class="d-sm-inline-block d-none">قبلی</span>
+                                                    </button>
+                                                    <button class="btn btn-primary btn-next">
+                                                        <span class="d-sm-inline-block d-none me-sm-1">بعدی</span>
+                                                        <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Social Links -->
+                                        <div id="workHistory" class="content">
+                                            <div class="content-header mb-3">
+                                                <h6 class="mb-1">سوابق کاری</h6>
+                                                <small>اطلاعات مربوط به سوابق کاری خود را وارد کنید.</small>
+                                            </div>
+                                            <div class="row g-3">
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="exJob-sherkat">نام سازمان</label>
+                                                    <input type="text" id="exJob-sherkat"
+                                                        class="form-control text-start" dir="ltr"
+                                                        placeholder="نام سازمان را وارد کنید" name="exjobCompany">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="exJob-name">عنوان شغلی</label>
+                                                    <input type="text" id="exJob-name" class="form-control text-start"
+                                                        dir="ltr" placeholder="عنوان شغلی را وارد کنید"
+                                                        name="exjobName">
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <label class="form-label d-block" for="exJob-start">تاریخ
+                                                        شروع</label>
+                                                    <input type="text" class="form-control" placeholder="YYYY/MM/DD"
+                                                        id="exJob-start" name="exjobStart">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label d-block" for="exJob-end">تاریخ
+                                                        پایان</label>
+                                                    <input type="text" class="form-control" placeholder="YYYY/MM/DD"
+                                                        id="exJob-end" name="exjobEnd">
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="exJob-pay">آخرین حقوق دریافتی</label>
+                                                    <input type="text" id="exJob-pay" class="form-control text-start"
+                                                        dir="ltr" placeholder="مقدار آخرین حقوق دریافتی را وارد کنید"
+                                                        name="exjobPay">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="exJob-phone">شماره تماس</label>
+                                                    <input type="text" id="exJob-phone" class="form-control text-start"
+                                                        dir="ltr" placeholder="شماره تماس را وارد کنید"
+                                                        name="exjobPhone">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label" for="exJob-reason">علت قطع همکاری</label>
+                                                    <input type="text" id="exJob-reason" class="form-control text-start"
+                                                        dir="ltr" placeholder="علت قطع همکاری را شرح دهید"
+                                                        name="exjobReason">
+                                                </div>
+                                                <hr>
+                                                <div class="row g-3">
+                                                    <div class="col-sm-6">
+                                                        <label class="form-label" for="exJob2-sherkat">نام سازمان
+                                                            (2)</label>
+                                                        <input type="text" id="exJob2-sherkat"
+                                                            class="form-control text-start" dir="ltr"
+                                                            placeholder="نام سازمان را وارد کنید" name="exjob2Company">
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label class="form-label" for="exJob2-name">عنوان شغلی</label>
+                                                        <input type="text" id="exJob2-name"
+                                                            class="form-control text-start" dir="ltr"
+                                                            placeholder="عنوان شغلی را وارد کنید" name="exjob2Name">
+                                                    </div>
+
+                                                    <div class="col-sm-6">
+                                                        <label class="form-label d-block" for="exJob2-start">تاریخ
+                                                            شروع</label>
+                                                        <input type="text" class="form-control" placeholder="YYYY/MM/DD"
+                                                            id="exJob2-start" name="exjob2Start">
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label class="form-label d-block" for="exJob2-end">تاریخ
+                                                            پایان</label>
+                                                        <input type="text" class="form-control" placeholder="YYYY/MM/DD"
+                                                            id="exJob2-end" name="exjob2End">
+                                                    </div>
+
+                                                    <div class="col-sm-6">
+                                                        <label class="form-label" for="exJob2-pay">آخرین حقوق
+                                                            دریافتی</label>
+                                                        <input type="text" id="exJob2-pay"
+                                                            class="form-control text-start" dir="ltr"
+                                                            placeholder="مقدار آخرین حقوق دریافتی را وارد کنید"
+                                                            name="exjob2Pay">
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label class="form-label" for="exJob2-phone">شماره تماس</label>
+                                                        <input type="text" id="exJob2-phone"
+                                                            class="form-control text-start" dir="ltr"
+                                                            placeholder="شماره تماس را وارد کنید" name="exjob2Phone">
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label class="form-label" for="exJob2-reason">علت قطع
+                                                            همکاری</label>
+                                                        <input type="text" id="exJob2-reason"
+                                                            class="form-control text-start" dir="ltr"
+                                                            placeholder="علت قطع همکاری را وارد کنید"
+                                                            name="exjob2Reason">
+                                                    </div>
+                                                    <hr>
+
+                                                    <div class="col-sm-6">
+                                                        <label class="form-label" for="exJob2-reason">لطفا دو نقطه قوت
+                                                            شغلی/شخصیتی خود را نام ببرید:</label>
+                                                        <input type="text" id="exJob2-reason"
+                                                            class="form-control text-start" dir="ltr"
+                                                            placeholder="محل درج پاسخ" required name="Points">
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label class="form-label" for="exJob2-reason">مدت سابقه
+                                                            بیمه</label>
+                                                        <input type="text" id="exJob2-reason"
+                                                            class="form-control text-start" dir="ltr"
+                                                            placeholder="مدت زمان سابقه بیمه خود را وارد کنید" required
+                                                            name="Bime">
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label class="form-label">آیا در حال حاضر مشغول کار دیگری (به
+                                                            صورت پاره وقت یا تمام وقت) هستید ؟</label>
+                                                        <div class="form-check mt-1">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="isWorking" id="haveJobyes" value="true" checked>
+                                                            <label class="form-check-label" for="haveJobyes">بله</label>
+                                                        </div>
+                                                        <div class="form-check mt-1">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="isWorking" id="haveJobno" value="false">
+                                                            <label class="form-check-label" for="haveJobno">خیر</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label class="form-label">آیا امکان اضافه کاری،شبکاری و ماموریت
+                                                            به شهرستان دارید ؟</label>
+                                                        <div class="form-check mt-1">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="canDorKari" id="ezafeKaryes" value="true" checked>
+                                                            <label class="form-check-label"
+                                                                for="ezafeKaryes">بله</label>
+                                                        </div>
+                                                        <div class="form-check mt-1">
+                                                            <input class="form-check-input" value="false" type="radio"
+                                                                name="canDorKari" id="ezafeKarno">
+                                                            <label class="form-check-label" for="ezafeKarno">خیر</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label class="form-label">آیا امکان ارائه ضمانت دارید؟</label>
+                                                        <div class="form-check mt-1">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="canZemanat" id="zemanatyes" value="true" checked>
+                                                            <label class="form-check-label" for="zemanatyes">بله</label>
+                                                        </div>
+                                                        <div class="form-check mt-1">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="canZemanat" id="zemanatno" value="false">
+                                                            <label class="form-check-label" for="zemanatno">خیر</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label class="form-label">آیا تابحال سابقه کیفری داشته
+                                                            اید؟</label>
+                                                        <div class="form-check mt-1">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="haveSopishine" id="jormyes" value="true" checked>
+                                                            <label class="form-check-label" for="jormyes">بله</label>
+                                                        </div>
+                                                        <div class="form-check mt-1">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="haveSopishine" id="jormno" value="false">
+                                                            <label class="form-check-label" for="jormno">خیر</label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-6">
+                                                        <label class="form-label d-block" for="exJob2-end">از چه تاریخی
+                                                            آماده همکاری با سازمان می باشید؟</label>
+                                                        <input type="text" class="form-control" placeholder="YYYY/MM/DD"
+                                                            id="jobstart" required name="startDate">
+                                                    </div>
+
+                                                    <div class="col-sm-6">
+                                                        <label class="form-label">به چه صورت مایل به همکاری با شرکت
+                                                            هستید؟</label>
+                                                        <div class="form-check mt-1">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="isFullTime" id="dorkariyes" value="true" checked>
+                                                            <label class="form-check-label" for="dorkariyes">تمام
+                                                                وقت</label>
+                                                        </div>
+                                                        <div class="form-check mt-1">
+                                                            <input class="form-check-input" value="false" type="radio"
+                                                                name="isFullTime" id="dorkarino">
+                                                            <label class="form-check-label" for="dorkarino">پاره
+                                                                وقت</label>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div class="col-sm-6">
+                                                        <label class="form-label" for="softwere3-lvl">حقوق
+                                                            درخواستی</label>
+                                                        <select id="softwere3-lvl" class="selectpicker w-100"
+                                                            data-style="btn-default" required name="payment">
+                                                            <option value="" disabled selected>انتخاب کنید...</option>
+                                                            <option value="8 الی 12 میلیون">8 الی 12 میلیون</option>
+                                                            <option value="12 الی 15 میلیون">12 الی 15 میلیون</option>
+                                                            <option value="15 الی 20 میلیون">15 الی 20 میلیون</option>
+                                                            <option value="25 الی 20 میلیون">25 الی 20 میلیون</option>
+                                                            <option value="30 الی 25 میلیون">30 الی 25 میلیون</option>
+                                                            <option value="35 الی 30 میلیون">35 الی 30 میلیون</option>
+                                                            <option value="40 الی 35 میلیون">40 الی 35 میلیون</option>
+                                                            <option value="50 الی 40 میلیون">50 الی 40 میلیون</option>
+                                                            <option value="60 الی 50 میلیون">60 الی 50 میلیون</option>
+                                                            <option value="60 میلیون به بالا">60 میلیون به بالا</option>
+                                                            <option value="توافقی">توافقی</option>
+
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label class="form-label" for="inputGroupFile01">درصورت نیاز
+                                                            رزومه خود را ارسال نمایید</label>
+                                                        <input type="file" class="form-control" id="inputGroupFile01"
+                                                            name="rezome">
+                                                    </div>
+
+
+
+
+
+                                                    <div class="col-12 d-flex justify-content-between">
+                                                        <button class="btn btn-primary btn-prev">
+                                                            <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
+                                                            <span class="d-sm-inline-block d-none">قبلی</span>
+                                                        </button>
+                                                        <button class="btn btn-success btn-submit">ثبت</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ Content -->
+
+                    <!-- Footer -->
+                    <footer class="content-footer footer bg-footer-theme">
+                        <div
+                            class="container-xxl d-flex flex-wrap justify-content-between py-3 flex-md-row flex-column">
+                            <div class="mb-2 mb-md-0">
+                                طراحی شده با ❤️ ارائه شده توسط تیم ایلیا استیل
+                            </div>
+
+                        </div>
+                    </footer>
+                    <!-- / Footer -->
+
+                    <div class="content-backdrop fade"></div>
+                </div>
+                <!--/ Content wrapper -->
+            </div>
+
+            <!--/ Layout container -->
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="layout-overlay layout-menu-toggle"></div>
+
+    <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+    <div class="drag-target"></div>
+
+    <!--/ Layout wrapper -->
+
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="../../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../../assets/vendor/js/bootstrap.js"></script>
+    <script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+    <script src="../../assets/vendor/libs/hammer/hammer.js"></script>
+
+    <script src="../../assets/vendor/libs/i18n/i18n.js"></script>
+    <script src="../../assets/vendor/libs/typeahead-js/typeahead.js"></script>
+
+    <script src="../../assets/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+    <script src="../../assets/vendor/libs/bs-stepper/bs-stepper.js"></script>
+    <script src="../../assets/vendor/libs/bootstrap-select/bootstrap-select.js"></script>
+    <script src="../../assets/vendor/libs/bootstrap-select/i18n/defaults-fa_IR.js"></script>
+    <script src="../../assets/vendor/libs/jdate/jdate.js"></script>
+    <script src="../../assets/vendor/libs/flatpickr/flatpickr-jdate.js"></script>
+    <script src="../../assets/vendor/libs/flatpickr/l10n/fa-jdate.js"></script>
+    <script src="../../assets/vendor/libs/select2/select2.js"></script>
+    <script src="../../assets/vendor/libs/select2/i18n/fa.js"></script>
+
+    <!-- Main JS -->
+    <script src="../../assets/js/main.js"></script>
+
+    <!-- Page JS -->
+
+    <script src="../../assets/js/date-main.js"></script>
+    <script src="../../assets/js/form-wizard-icons.js"></script>
+</body>
+
+</html>
