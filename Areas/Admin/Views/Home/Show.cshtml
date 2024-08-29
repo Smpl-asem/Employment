@@ -88,7 +88,7 @@
 
             <div class="row" style="border-bottom: solid 1px rgb(121, 121, 121) ;">
                 <div class="col-4" style="border-left: solid 1px rgb(121, 121, 121) ; text-align: right;">
-                    تاریخ تولد : <b>@ViewBag.data.BirthDay.Replace('-','/')</b>
+                    تاریخ تولد : @{if(ViewBag.data.BirthDay != null){<b>@ViewBag.data.BirthDay.Replace('-','/')</b>}}
                 </div>
                 <div class="col-4" style="border-left: solid 1px rgb(121, 121, 121) ;">
                     ملیت : <b>@ViewBag.data.Meliat</b>
@@ -636,10 +636,10 @@
                     @ViewBag.data.exjobName
                 </div>
                 <div class="col-1 font-monospace" style="border-left: solid 1px rgb(121, 121, 121) ;">
-                    @ViewBag.data.exjobStart.Replace("-", "/")
+                    @{if(ViewBag.data.BirthDay != null){<b>@ViewBag.data.exjobStart.Replace('-','/')</b>}}
                 </div>
                 <div class="col-1" style="border-left: solid 1px rgb(121, 121, 121) ;">
-                    @ViewBag.data.exjobEnd.Replace("-", "/")
+                    @{if(ViewBag.data.BirthDay != null){<b>@ViewBag.data.exjobEnd.Replace('-','/')</b>}}
                 </div>
                 <div class="col-2" style="border-left: solid 1px rgb(121, 121, 121) ;">
                     @ViewBag.data.exjobPay
@@ -660,10 +660,10 @@
                     @ViewBag.data.exjob2Name
                 </div>
                 <div class="col-1 font-monospace" style="border-left: solid 1px rgb(121, 121, 121) ;">
-                    @ViewBag.data.exjob2Start.Replace("-", "/")
+                    @{if(ViewBag.data.BirthDay != null){<b>@ViewBag.data.exjob2Start.Replace('-','/')</b>}}
                 </div>
                 <div class="col-1" style="border-left: solid 1px rgb(121, 121, 121) ;">
-                    @ViewBag.data.exjob2End.Replace("-", "/")
+                    @{if(ViewBag.data.BirthDay != null){<b>@ViewBag.data.exjob2End.Replace('-','/')</b>}}
                 </div>
                 <div class="col-2" style="border-left: solid 1px rgb(121, 121, 121) ;">
                     @ViewBag.data.exjob2Pay
