@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BroTTeUKXZ/RO1bWf1H6T+tFlGfc6fXAy0roHioXy6mZg3TBwHhzRQ9DVjfCaK0pcX51Biu39fLOEgeRlvpYVw==",
+  "dgSpecHash": "ZaJ4RCmKeas8r8J0QqtFL8POTpGIIzVcpJiWiF2yrd2h8T28h63h2cRBjWcz/EmXsMAn8qwd1ACpYcWf3Rv+lQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\asemn\\Desktop\\New folder (3)\\employNew\\Employment.csproj",
+  "projectFilePath": "C:\\Users\\asemn\\Desktop\\Employment\\Employment.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\asemn\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\asemn\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

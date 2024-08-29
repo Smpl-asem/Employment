@@ -1,169 +1,80 @@
-/**
- *  Form Wizard
- */
+/**  
+ *  Form Wizard  
+ */  
+'use strict';  
 
-'use strict';
+(function () {  
+  const wizardPropertyListing = document.querySelector('.wizard-vertical-icons-example');  
 
-$(function () {
-  const select2 = $('.select2'),
-    selectPicker = $('.selectpicker');
+  if (wizardPropertyListing !== null) {  
+    const wizardPropertyListingForm = wizardPropertyListing.querySelector('#fomame');  
+    
+    const wizardPropertyListingFormSteps = [  
+      wizardPropertyListingForm.querySelector('#personal-data'),  
+      wizardPropertyListingForm.querySelector('#family-data'),  
+      wizardPropertyListingForm.querySelector('#study-data'),  
+      wizardPropertyListingForm.querySelector('#abilities'),  
+      wizardPropertyListingForm.querySelector('#workHistory')  
+    ];  
 
-  // Bootstrap select
-  if (selectPicker.length) {
-    selectPicker.selectpicker();
-  }
+    const wizardPropertyListingNext = [].slice.call(wizardPropertyListingForm.querySelectorAll('.btn-next'));  
+    const wizardPropertyListingPrev = [].slice.call(wizardPropertyListingForm.querySelectorAll('.btn-prev'));  
+    const wizardIconsVerticalBtnSubmit = wizardPropertyListing.querySelector('.btn-submit');  
 
-  // select2
-  if (select2.length) {
-    select2.each(function () {
-      var $this = $(this);
-      $this.wrap('<div class="position-relative"></div>');
-      $this.select2({
-        placeholder: 'انتخاب',
-        dropdownParent: $this.parent()
-      });
-    });
-  }
-});
+    const validationStepper = new Stepper(wizardPropertyListing, { linear: true });  
 
-(function () {
-  // Icons Wizard
-  // --------------------------------------------------------------------
-  const wizardIcons = document.querySelector('.wizard-icons-example');
+    const validateStep = (step) => {  
+      if (!step) {  
+        console.error('مرحله معتبر نمی‌باشد.');  
+        return false; // اگر مرحله صحیح نباشد، اعتبارسنجی نامعتبر است  
+      }  
 
-  if (typeof wizardIcons !== undefined && wizardIcons !== null) {
-    const wizardIconsBtnNextList = [].slice.call(wizardIcons.querySelectorAll('.btn-next')),
-      wizardIconsBtnPrevList = [].slice.call(wizardIcons.querySelectorAll('.btn-prev')),
-      wizardIconsBtnSubmit = wizardIcons.querySelector('.btn-submit');
+      const inputs = step.querySelectorAll('input[required]');  
+      let isValid = true;  
 
-    const iconsStepper = new Stepper(wizardIcons, {
-      linear: false
-    });
-    if (wizardIconsBtnNextList) {
-      wizardIconsBtnNextList.forEach(wizardIconsBtnNext => {
-        wizardIconsBtnNext.addEventListener('click', event => {
-          iconsStepper.next();
-        });
-      });
-    }
-    if (wizardIconsBtnPrevList) {
-      wizardIconsBtnPrevList.forEach(wizardIconsBtnPrev => {
-        wizardIconsBtnPrev.addEventListener('click', event => {
-          iconsStepper.previous();
-        });
-      });
-    }
-    if (wizardIconsBtnSubmit) {
-      wizardIconsBtnSubmit.addEventListener('click', event => {
-        alert('ثبت شد ...!!');
-      });
-    }
-  }
-
-  // Vertical Icons Wizard
-  // --------------------------------------------------------------------
-  const wizardIconsVertical = document.querySelector('.wizard-vertical-icons-example');
-
-  if (typeof wizardIconsVertical !== undefined && wizardIconsVertical !== null) {
-    const wizardIconsVerticalBtnNextList = [].slice.call(wizardIconsVertical.querySelectorAll('.btn-next')),
-      wizardIconsVerticalBtnPrevList = [].slice.call(wizardIconsVertical.querySelectorAll('.btn-prev')),
-      wizardIconsVerticalBtnSubmit = wizardIconsVertical.querySelector('.btn-submit');
-
-    const verticalIconsStepper = new Stepper(wizardIconsVertical, {
-      linear: false
-    });
-
-    if (wizardIconsVerticalBtnNextList) {
-      wizardIconsVerticalBtnNextList.forEach(wizardIconsVerticalBtnNext => {
-        wizardIconsVerticalBtnNext.addEventListener('click', event => {
-          event.preventDefault();
-          verticalIconsStepper.next();
-        });
-      });
-    }
-    if (wizardIconsVerticalBtnPrevList) {
-      wizardIconsVerticalBtnPrevList.forEach(wizardIconsVerticalBtnPrev => {
-        wizardIconsVerticalBtnPrev.addEventListener('click', event => {
-          event.preventDefault();
-          verticalIconsStepper.previous();
-        });
-      });
-    }
-    if (wizardIconsVerticalBtnSubmit) {
-      wizardIconsVerticalBtnSubmit.addEventListener('click', event => {
-        const form = wizardIconsVertical.closest('form'); // گرفتن فرم نزدیک  
-        if (form) {  
-            form.submit(); // ارسال فرم  
+      inputs.forEach(input => {  
+        if (!input.value.trim()) {  
+          isValid = false;  
+          input.classList.add('is-invalid');   
+        } else {  
+          input.classList.remove('is-invalid');   
         }  
-      });
-    }
-  }
+      });  
 
-  // Icons Modern Wizard
-  // --------------------------------------------------------------------
-  const wizardIconsModern = document.querySelector('.wizard-modern-icons-example');
+      return isValid;  
+    };  
 
-  if (typeof wizardIconsModern !== undefined && wizardIconsModern !== null) {
-    const wizardIconsModernBtnNextList = [].slice.call(wizardIconsModern.querySelectorAll('.btn-next')),
-      wizardIconsModernBtnPrevList = [].slice.call(wizardIconsModern.querySelectorAll('.btn-prev')),
-      wizardIconsModernBtnSubmit = wizardIconsModern.querySelector('.btn-submit');
+    wizardPropertyListingNext.forEach((button) => {  
+      button.addEventListener('click', (event) => {  
+        const currentStep = button.closest('.step2');   
+        
+        if (validateStep(currentStep)) {  
+          validationStepper.next();   
+        } else {  
+          alert('لطفا تمام فیلدهای اجباری را پر کنید.');  
+        }  
+      });  
+    });  
 
-    const modernIconsStepper = new Stepper(wizardIconsModern, {
-      linear: false
-    });
+    wizardPropertyListingPrev.forEach((button) => {  
+      button.addEventListener('click', () => {  
+        validationStepper.previous();   
+      });  
+    });  
 
-    if (wizardIconsModernBtnNextList) {
-      wizardIconsModernBtnNextList.forEach(wizardIconsModernBtnNext => {
-        wizardIconsModernBtnNext.addEventListener('click', event => {
-          modernIconsStepper.next();
-        });
-      });
-    }
-    if (wizardIconsModernBtnPrevList) {
-      wizardIconsModernBtnPrevList.forEach(wizardIconsModernBtnPrev => {
-        wizardIconsModernBtnPrev.addEventListener('click', event => {
-          modernIconsStepper.previous();
-        });
-      });
-    }
-    if (wizardIconsModernBtnSubmit) {
-      wizardIconsModernBtnSubmit.addEventListener('click', event => {
-        alert('ثبت شد ...!!');
-      });
-    }
-  }
-
-  // Icons Modern Wizard
-  // --------------------------------------------------------------------
-  const wizardIconsModernVertical = document.querySelector('.wizard-modern-vertical-icons-example');
-
-  if (typeof wizardIconsModernVertical !== undefined && wizardIconsModernVertical !== null) {
-    const wizardIconsModernVerticalBtnNextList = [].slice.call(wizardIconsModernVertical.querySelectorAll('.btn-next')),
-      wizardIconsModernVerticalBtnPrevList = [].slice.call(wizardIconsModernVertical.querySelectorAll('.btn-prev')),
-      wizardIconsModernVerticalBtnSubmit = wizardIconsModernVertical.querySelector('.btn-submit');
-
-    const verticalModernIconsStepper = new Stepper(wizardIconsModernVertical, {
-      linear: false
-    });
-
-    if (wizardIconsModernVerticalBtnNextList) {
-      wizardIconsModernVerticalBtnNextList.forEach(wizardIconsModernVerticalBtnNext => {
-        wizardIconsModernVerticalBtnNext.addEventListener('click', event => {
-          verticalModernIconsStepper.next();
-        });
-      });
-    }
-    if (wizardIconsModernVerticalBtnPrevList) {
-      wizardIconsModernVerticalBtnPrevList.forEach(wizardIconsModernVerticalBtnPrev => {
-        wizardIconsModernVerticalBtnPrev.addEventListener('click', event => {
-          verticalModernIconsStepper.previous();
-        });
-      });
-    }
-    if (wizardIconsModernVerticalBtnSubmit) {
-      wizardIconsModernVerticalBtnSubmit.addEventListener('click', event => {
-        alert('ثبت شد ...!!');
-      });
-    }
-  }
+    if (wizardIconsVerticalBtnSubmit) {  
+      wizardIconsVerticalBtnSubmit.addEventListener('click', event => {  
+        const form = wizardPropertyListingForm;  
+        
+        const allInputsValid = [...wizardPropertyListingFormSteps].every(step => validateStep(step));  
+        
+        if (allInputsValid) {  
+          form.submit();   
+        } else {  
+          alert('لطفا تمام فیلدهای اجباری را پر کنید.');  
+          event.preventDefault();   
+        }  
+      });  
+    }  
+  }  
 })();

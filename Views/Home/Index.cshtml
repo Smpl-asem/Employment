@@ -176,8 +176,9 @@
 
                                 </div>
                                 <div class="bs-stepper-content">
-                                    <form class="mb-3" action="/home/index" method="POST" enctype="multipart/form-data">
-                                        <div id="personal-data" class="content">
+                                    <form id="fomame" class="mb-3" action="/home/index" method="POST"
+                                        enctype="multipart/form-data">
+                                        <div id="personal-data" class="content step2">
                                             <div class="content-header mb-3">
                                                 <h6 class="mb-1">اطلاعات شخصی</h6>
                                                 <small>اطلاعات شخصی خود را وارد کنید.</small>
@@ -194,7 +195,7 @@
                                                     <label class="form-label" for="jobFind">نحوه آشنایی</label>
                                                     <select id="jobFind" class="selectpicker w-100"
                                                         data-style="btn-default" required name="howFind">
-                                                        <option value="" selected disabled>انتخاب</option>
+                                                        <option value=" " selected disabled>انتخاب</option>
                                                         <option value="جاب ویژن">جاب ویژن</option>
                                                         <option value="جابینجا">جابینجا</option>
                                                         <option value="سایت دیوار">سایت دیوار</option>
@@ -294,7 +295,7 @@
                                                     <label class="form-label" for="codeMeli">وضعیت نظام وظیفه</label>
                                                     <select id="selectpickerBasic" class="selectpicker w-100"
                                                         data-style="btn-default" required name="Sarbazi">
-                                                        <option value="" disabled selected>انتخاب کنید...</option>
+                                                        <option value=" " disabled selected>انتخاب کنید...</option>
                                                         <option value="خانم هستم">خانم هستم</option>
                                                         <option value="پایان خدمت">پایان خدمت</option>
                                                         <option value="درحال خدمت">درحال خدمت</option>
@@ -352,11 +353,12 @@
 
 
                                                 <div class="col-12 d-flex justify-content-between">
-                                                    <button class="btn btn-label-secondary btn-prev" disabled>
+                                                    <button type="button" class="btn btn-label-secondary btn-prev"
+                                                        disabled>
                                                         <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
                                                         <span class="d-sm-inline-block d-none">قبلی</span>
                                                     </button>
-                                                    <button class="btn btn-primary btn-next">
+                                                    <button type="button" class="btn btn-primary btn-next">
                                                         <span class="d-sm-inline-block d-none me-sm-1">بعدی</span>
                                                         <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
                                                     </button>
@@ -364,7 +366,7 @@
                                             </div>
                                         </div>
 
-                                        <div id="family-data" class="content">
+                                        <div id="family-data" class="content step2">
                                             <div class="content-header mb-3">
                                                 <h6 class="mb-1">مشخصات بستگان درجه یک</h6>
                                                 <small>اطلاعات را کامل کنید.</small>
@@ -442,7 +444,7 @@
                                                     <label class="form-label" for="r1-rel">نسبت</label>
                                                     <select id="r1-rel" class="selectpicker w-100"
                                                         data-style="btn-default" name="rel1Rel">
-                                                        <option value="" disabled selected>انتخاب کنید...</option>
+                                                        <option value=" " disabled selected>انتخاب کنید...</option>
                                                         <option value="همسر">همسر</option>
                                                         <option value="برادر">برادر</option>
                                                         <option value="خواهر">خواهر</option>
@@ -470,7 +472,7 @@
                                                     <label class="form-label" for="r2-rel">نسبت</label>
                                                     <select id="r2-rel" class="selectpicker w-100"
                                                         data-style="btn-default" name="rel2Rel">
-                                                        <option value="" disabled selected>انتخاب کنید...</option>
+                                                        <option value=" " disabled selected>انتخاب کنید...</option>
                                                         <option value="همسر">همسر</option>
                                                         <option value="برادر">برادر</option>
                                                         <option value="خواهر">خواهر</option>
@@ -517,11 +519,11 @@
 
 
                                                 <div class="col-12 d-flex justify-content-between">
-                                                    <button class="btn btn-primary btn-prev">
+                                                    <button type="button" class="btn btn-label-secondary btn-prev">
                                                         <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
                                                         <span class="d-sm-inline-block d-none">قبلی</span>
                                                     </button>
-                                                    <button class="btn btn-primary btn-next">
+                                                    <button type="button" class="btn btn-primary btn-next">
                                                         <span class="d-sm-inline-block d-none me-sm-1">بعدی</span>
                                                         <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
                                                     </button>
@@ -529,7 +531,7 @@
                                             </div>
                                         </div>
 
-                                        <div id="study-data" class="content">
+                                        <div id="study-data" class="content step2">
                                             <div class="content-header mb-3">
                                                 <h6 class="mb-1">مشخصات تحصیلی</h6>
                                                 <small>اطلاعات را کامل کنید.</small>
@@ -545,8 +547,8 @@
                                                     <label class="form-label" for="study1-lvl">مقطع تحصیلی</label>
                                                     <select id="study1-lvl" class="selectpicker w-100"
                                                         data-style="btn-default" required name="studylvl">
-                                                        <option value="" disabled selected>انتخاب کنید...</option>
-                                                        <option value="">انتخاب مقطع تحصیلی</option>
+                                                        <option value=" " disabled selected>انتخاب کنید...</option>
+                                                        <option value=" ">انتخاب مقطع تحصیلی</option>
                                                         <option value="زیر دیپلم">زیر دیپلم</option>
                                                         <option value="دیپلم">دیپلم</option>
                                                         <option value="کاردانی">کاردانی</option>
@@ -600,8 +602,8 @@
                                                         <label class="form-label" for="study2-lvl">مقطع تحصیلی</label>
                                                         <select id="study2-lvl" class="selectpicker w-100"
                                                             data-style="btn-default" name="study2lvl">
-                                                            <option value="" disabled selected>انتخاب کنید...</option>
-                                                            <option value="">انتخاب مقطع تحصیلی</option>
+                                                            <option value=" " disabled selected>انتخاب کنید...</option>
+                                                            <option value=" ">انتخاب مقطع تحصیلی</option>
                                                             <option value="زیر دیپلم">زیر دیپلم</option>
                                                             <option value="دیپلم">دیپلم</option>
                                                             <option value="کاردانی">کاردانی</option>
@@ -631,11 +633,11 @@
 
 
                                                     <div class="col-12 d-flex justify-content-between">
-                                                        <button class="btn btn-primary btn-prev">
+                                                        <button type="button" class="btn btn-label-secondary btn-prev">
                                                             <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
                                                             <span class="d-sm-inline-block d-none">قبلی</span>
                                                         </button>
-                                                        <button class="btn btn-primary btn-next">
+                                                        <button type="button" class="btn btn-primary btn-next">
                                                             <span class="d-sm-inline-block d-none me-sm-1">بعدی</span>
                                                             <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
                                                         </button>
@@ -644,7 +646,7 @@
                                             </div>
                                         </div>
 
-                                        <div id="abilities" class="content">
+                                        <div id="abilities" class="content step2">
                                             <div class="content-header mb-3">
                                                 <h6 class="mb-1">قابلیت ها و توانایی</h6>
                                                 <small>اطلاعات مربوط به زبان خارجه</small>
@@ -660,7 +662,7 @@
                                                     <label class="form-label" for="lang1-con">مکالمه</label>
                                                     <select id="lang1-con" class="selectpicker w-100"
                                                         data-style="btn-default" name="englishConv">
-                                                        <option value="" disabled selected>انتخاب کنید...</option>
+                                                        <option value=" " disabled selected>انتخاب کنید...</option>
                                                         <option value="ضعیف">ضعیف</option>
                                                         <option value="متوسط">متوسط</option>
                                                         <option value="خوب">خوب</option>
@@ -670,7 +672,7 @@
                                                     <label class="form-label" for="lang1-write">نگارش</label>
                                                     <select id="lang1-write" class="selectpicker w-100"
                                                         data-style="btn-default" name="englishWrite">
-                                                        <option value="" disabled selected>انتخاب کنید...</option>
+                                                        <option value=" " disabled selected>انتخاب کنید...</option>
                                                         <option value="ضعیف">ضعیف</option>
                                                         <option value="متوسط">متوسط</option>
                                                         <option value="خوب">خوب</option>
@@ -680,7 +682,7 @@
                                                     <label class="form-label" for="lang1-under">درک مطلب</label>
                                                     <select id="lang1-under" class="selectpicker w-100"
                                                         data-style="btn-default" name="englishUndrestand">
-                                                        <option value="" disabled selected>انتخاب کنید...</option>
+                                                        <option value=" " disabled selected>انتخاب کنید...</option>
                                                         <option value="ضعیف">ضعیف</option>
                                                         <option value="متوسط">متوسط</option>
                                                         <option value="خوب">خوب</option>
@@ -696,7 +698,7 @@
                                                     <label class="form-label" for="lang1-con">مکالمه</label>
                                                     <select id="lang1-con" class="selectpicker w-100"
                                                         data-style="btn-default" name="LangConv">
-                                                        <option value="" disabled selected>انتخاب کنید...</option>
+                                                        <option value=" " disabled selected>انتخاب کنید...</option>
                                                         <option value="ضعیف">ضعیف</option>
                                                         <option value="متوسط">متوسط</option>
                                                         <option value="خوب">خوب</option>
@@ -706,7 +708,7 @@
                                                     <label class="form-label" for="lang1-write">نگارش</label>
                                                     <select id="lang1-write" class="selectpicker w-100"
                                                         data-style="btn-default" name="langWrite">
-                                                        <option value="" disabled selected>انتخاب کنید...</option>
+                                                        <option value=" " disabled selected>انتخاب کنید...</option>
                                                         <option value="ضعیف">ضعیف</option>
                                                         <option value="متوسط">متوسط</option>
                                                         <option value="خوب">خوب</option>
@@ -716,7 +718,7 @@
                                                     <label class="form-label" for="lang1-under">درک مطلب</label>
                                                     <select id="lang1-under" class="selectpicker w-100"
                                                         data-style="btn-default" name="langUnderstand">
-                                                        <option value="" disabled selected>انتخاب کنید...</option>
+                                                        <option value=" " disabled selected>انتخاب کنید...</option>
                                                         <option value="ضعیف">ضعیف</option>
                                                         <option value="متوسط">متوسط</option>
                                                         <option value="خوب">خوب</option>
@@ -755,7 +757,7 @@
                                                     <label class="form-label" for="softwere1-lvl">میزان تسلط</label>
                                                     <select id="softwere1-lvl" class="selectpicker w-100"
                                                         data-style="btn-default" name="soft1lvl">
-                                                        <option value="" disabled selected>انتخاب کنید...</option>
+                                                        <option value=" " disabled selected>انتخاب کنید...</option>
                                                         <option value="ضعیف">ضعیف</option>
                                                         <option value="متوسط">متوسط</option>
                                                         <option value="خوب">خوب</option>
@@ -770,7 +772,7 @@
                                                     <label class="form-label" for="softwere2-lvl">میزان تسلط</label>
                                                     <select id="softwere2-lvl" class="selectpicker w-100"
                                                         data-style="btn-default" name="soft2lvl">
-                                                        <option value="" disabled selected>انتخاب کنید...</option>
+                                                        <option value=" " disabled selected>انتخاب کنید...</option>
                                                         <option value="ضعیف">ضعیف</option>
                                                         <option value="متوسط">متوسط</option>
                                                         <option value="خوب">خوب</option>
@@ -785,7 +787,7 @@
                                                     <label class="form-label" for="softwere3-lvl">میزان تسلط</label>
                                                     <select id="softwere3-lvl" class="selectpicker w-100"
                                                         data-style="btn-default" name="soft3lvl">
-                                                        <option value="" disabled selected>انتخاب کنید...</option>
+                                                        <option value=" " disabled selected>انتخاب کنید...</option>
                                                         <option value="ضعیف">ضعیف</option>
                                                         <option value="متوسط">متوسط</option>
                                                         <option value="خوب">خوب</option>
@@ -793,11 +795,11 @@
                                                 </div>
 
                                                 <div class="col-12 d-flex justify-content-between">
-                                                    <button class="btn btn-primary btn-prev">
+                                                    <button type="button" class="btn btn-label-secondary btn-prev">
                                                         <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
                                                         <span class="d-sm-inline-block d-none">قبلی</span>
                                                     </button>
-                                                    <button class="btn btn-primary btn-next">
+                                                    <button type="button" class="btn btn-primary btn-next">
                                                         <span class="d-sm-inline-block d-none me-sm-1">بعدی</span>
                                                         <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
                                                     </button>
@@ -805,7 +807,7 @@
                                             </div>
                                         </div>
                                         <!-- Social Links -->
-                                        <div id="workHistory" class="content">
+                                        <div id="workHistory" class="content step2">
                                             <div class="content-header mb-3">
                                                 <h6 class="mb-1">سوابق کاری</h6>
                                                 <small>اطلاعات مربوط به سوابق کاری خود را وارد کنید.</small>
@@ -1011,7 +1013,7 @@
                                                             درخواستی</label>
                                                         <select id="softwere3-lvl" class="selectpicker w-100"
                                                             data-style="btn-default" required name="payment">
-                                                            <option value="" disabled selected>انتخاب کنید...</option>
+                                                            <option value=" " disabled selected>انتخاب کنید...</option>
                                                             <option value="8 الی 12 میلیون">8 الی 12 میلیون</option>
                                                             <option value="12 الی 15 میلیون">12 الی 15 میلیون</option>
                                                             <option value="15 الی 20 میلیون">15 الی 20 میلیون</option>
@@ -1038,7 +1040,7 @@
 
 
                                                     <div class="col-12 d-flex justify-content-between">
-                                                        <button class="btn btn-primary btn-prev">
+                                                        <button type="button" class="btn btn-primary btn-prev">
                                                             <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
                                                             <span class="d-sm-inline-block d-none">قبلی</span>
                                                         </button>
@@ -1046,7 +1048,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-
+                                        </div>
                                     </form>
                                 </div>
                             </div>
@@ -1107,6 +1109,9 @@
     <script src="../../assets/vendor/libs/flatpickr/l10n/fa-jdate.js"></script>
     <script src="../../assets/vendor/libs/select2/select2.js"></script>
     <script src="../../assets/vendor/libs/select2/i18n/fa.js"></script>
+    <script src="../../assets/vendor/libs/formvalidation/dist/js/FormValidation.min.js"></script>
+    <script src="../../assets/vendor/libs/formvalidation/dist/js/plugins/Bootstrap5.min.js"></script>
+    <script src="../../assets/vendor/libs/formvalidation/dist/js/plugins/AutoFocus.min.js"></script>
 
     <!-- Main JS -->
     <script src="../../assets/js/main.js"></script>

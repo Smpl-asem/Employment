@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\asemn\\Desktop\\New folder (3)\\employNew\\Employment.csproj": {}
+    "C:\\Users\\asemn\\Desktop\\Employment\\Employment.csproj": {}
   },
   "projects": {
-    "C:\\Users\\asemn\\Desktop\\New folder (3)\\employNew\\Employment.csproj": {
+    "C:\\Users\\asemn\\Desktop\\Employment\\Employment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\asemn\\Desktop\\New folder (3)\\employNew\\Employment.csproj",
+        "projectUniqueName": "C:\\Users\\asemn\\Desktop\\Employment\\Employment.csproj",
         "projectName": "Employment",
-        "projectPath": "C:\\Users\\asemn\\Desktop\\New folder (3)\\employNew\\Employment.csproj",
+        "projectPath": "C:\\Users\\asemn\\Desktop\\Employment\\Employment.csproj",
         "packagesPath": "C:\\Users\\asemn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\asemn\\Desktop\\New folder (3)\\employNew\\obj\\",
+        "outputPath": "C:\\Users\\asemn\\Desktop\\Employment\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -9,63 +9,63 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Employment
 build_property.RootNamespace = Employment
-build_property.ProjectDir = c:\Users\asemn\Desktop\New folder (3)\employNew\
+build_property.ProjectDir = c:\Users\asemn\Desktop\Employment\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\Users\asemn\Desktop\New folder (3)\employNew
+build_property.MSBuildProjectDirectory = c:\Users\asemn\Desktop\Employment
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/Users/asemn/Desktop/New folder (3)/employNew/Areas/Admin/Views/Home/index.cshtml]
+[c:/Users/asemn/Desktop/Employment/Areas/Admin/Views/Home/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxpbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asemn/Desktop/New folder (3)/employNew/Areas/Admin/Views/Home/Show.cshtml]
+[c:/Users/asemn/Desktop/Employment/Areas/Admin/Views/Home/Show.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxTaG93LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asemn/Desktop/New folder (3)/employNew/Areas/Admin/Views/Shared/Error.cshtml]
+[c:/Users/asemn/Desktop/Employment/Areas/Admin/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asemn/Desktop/New folder (3)/employNew/Areas/Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/asemn/Desktop/Employment/Areas/Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asemn/Desktop/New folder (3)/employNew/Areas/Admin/Views/_ViewImports.cshtml]
+[c:/Users/asemn/Desktop/Employment/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asemn/Desktop/New folder (3)/employNew/Areas/Admin/Views/_ViewStart.cshtml]
+[c:/Users/asemn/Desktop/Employment/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asemn/Desktop/New folder (3)/employNew/Views/Home/Index.cshtml]
+[c:/Users/asemn/Desktop/Employment/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asemn/Desktop/New folder (3)/employNew/Views/Shared/Error.cshtml]
+[c:/Users/asemn/Desktop/Employment/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asemn/Desktop/New folder (3)/employNew/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/asemn/Desktop/Employment/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asemn/Desktop/New folder (3)/employNew/Views/_ViewImports.cshtml]
+[c:/Users/asemn/Desktop/Employment/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asemn/Desktop/New folder (3)/employNew/Views/_ViewStart.cshtml]
+[c:/Users/asemn/Desktop/Employment/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asemn/Desktop/New folder (3)/employNew/Areas/Admin/Views/Shared/_Layout.cshtml]
+[c:/Users/asemn/Desktop/Employment/Areas/Admin/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-bc2qjh7u5g
 
-[c:/Users/asemn/Desktop/New folder (3)/employNew/Views/Shared/_Layout.cshtml]
+[c:/Users/asemn/Desktop/Employment/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-i42my5ej5g
