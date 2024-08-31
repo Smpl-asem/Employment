@@ -4,6 +4,9 @@ public class Users
 {
     [Key]
     public int Id { get; set; }
+    public bool isRead { get; set; }
+    public int departmentId { get; set; }
+    public JobDepartment department { get; set; }
     public string wishedJob { get; set; }
     public string howFind { get; set; }
     public string FirstName { get; set; }//
@@ -20,6 +23,7 @@ public class Users
     public bool isTobacco { get; set; } // دخانیات
     public string Sarbazi { get; set; }//
     public bool GovahiRanandegi { get; set; }//
+    public bool GovahiMotor { get; set; }//
     public string phoneSabet { get; set; }//
     public string phone { get; set; }//
     public string phoneSos { get; set; }//

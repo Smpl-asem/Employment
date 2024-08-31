@@ -192,6 +192,18 @@
                                                         required name="wishedJob">
                                                 </div>
                                                 <div class="col-sm-6">
+                                                    <label class="form-label" for="department">دپارتمان کاری</label>
+                                                    <select id="department" class="selectpicker w-100"
+                                                        data-style="btn-default" required name="department">
+                                                        <option value="" selected disabled>انتخاب</option>
+                                                        @{
+                                                            foreach(var item in ViewBag.Jobs){
+                                                                <option value="@item.Id">@item.Name</option>
+                                                            }
+                                                        }
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-6">
                                                     <label class="form-label" for="jobFind">نحوه آشنایی</label>
                                                     <select id="jobFind" class="selectpicker w-100"
                                                         data-style="btn-default" required name="howFind">
@@ -259,13 +271,13 @@
                                                     <label class="form-label">وضعیت تاهل</label>
                                                     <div class="form-check mt-1">
                                                         <input class="form-check-input" type="radio" name="isSingle"
-                                                            id="plCommonAreaRadioYes" checked>
+                                                            id="plCommonAreaRadioYes" value="true" checked>
                                                         <label class="form-check-label"
                                                             for="plCommonAreaRadioYes">مجرد</label>
                                                     </div>
                                                     <div class="form-check mt-1">
                                                         <input class="form-check-input" type="radio" name="isSingle"
-                                                            id="plCommonAreaRadioNo">
+                                                            id="plCommonAreaRadioNo" value="false">
                                                         <label class="form-check-label"
                                                             for="plCommonAreaRadioNo">متاهل</label>
                                                     </div>
@@ -281,12 +293,12 @@
                                                     <label class="form-label">مصرف دخانیات</label>
                                                     <div class="form-check mt-1">
                                                         <input class="form-check-input" type="radio" name="isTobacco"
-                                                            id="dokhaniat-no" checked>
+                                                            id="dokhaniat-no" checked  value="false">
                                                         <label class="form-check-label" for="dokhaniat-no">ندارم</label>
                                                     </div>
                                                     <div class="form-check mt-1">
                                                         <input class="form-check-input" type="radio" name="isTobacco"
-                                                            id="dokhaniat-yes">
+                                                            id="dokhaniat-yes" value="true">
                                                         <label class="form-check-label" for="dokhaniat-yes">دارم</label>
                                                     </div>
                                                 </div>
@@ -311,12 +323,25 @@
                                                     <label class="form-label">گواهینامه رانندگی</label>
                                                     <div class="form-check mt-1">
                                                         <input class="form-check-input" type="radio"
-                                                            name="GovahiRanandegi" id="govahi-yes" checked>
+                                                            name="GovahiRanandegi" id="govahi-yes" value="true"  checked>
                                                         <label class="form-check-label" for="govahi-yes">دارم</label>
                                                     </div>
                                                     <div class="form-check mt-1">
                                                         <input class="form-check-input" type="radio"
-                                                            name="GovahiRanandegi" id="govahi-no">
+                                                            name="GovahiRanandegi" id="govahi-no" value="false" >
+                                                        <label class="form-check-label" for="govahi-no">ندارم</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="form-label">گواهینامه موتور</label>
+                                                    <div class="form-check mt-1">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="GovahiMotor" id="govahi-yes" value="true" checked>
+                                                        <label class="form-check-label" for="govahi-yes">دارم</label>
+                                                    </div>
+                                                    <div class="form-check mt-1">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="GovahiMotor" id="govahi-no" value="no">
                                                         <label class="form-check-label" for="govahi-no">ندارم</label>
                                                     </div>
                                                 </div>
@@ -580,12 +605,12 @@
                                                         ؟</label>
                                                     <div class="form-check mt-1">
                                                         <input class="form-check-input" type="radio" name="isStuding"
-                                                            id="stillStudyYes" checked>
+                                                            id="stillStudyYes" checked value="true">
                                                         <label class="form-check-label" for="stillStudyYes">بله</label>
                                                     </div>
                                                     <div class="form-check mt-1">
                                                         <input class="form-check-input" type="radio" name="isStuding"
-                                                            id="stillStudyNo">
+                                                            id="stillStudyNo" value="false">
                                                         <label class="form-check-label" for="stillStudyNo">خیر</label>
                                                     </div>
                                                 </div>

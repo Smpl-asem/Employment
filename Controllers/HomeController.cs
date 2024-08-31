@@ -13,16 +13,20 @@ public class HomeController : Controller
     }
     public IActionResult Index()
     {
+        ViewBag.Jobs = db.Jobs_tbl.ToList();
         return View();
     }
 
     [HttpPost]
     public async Task<IActionResult> Index(DtoUser user)
     {
+        ViewBag.Jobs = db.Jobs_tbl.ToList();
         if (!db.Users_tbl.Any(x => x.CodeMeli == user.CodeMeli))
         {
             db.Users_tbl.Add(new Users
             {
+                isRead = false,
+                departmentId = user.department,
                 Address = user.Address,
                 AfradTafakol = user.AfradTafakol,
                 Bime = user.Bime,

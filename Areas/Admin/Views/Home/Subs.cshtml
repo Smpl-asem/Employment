@@ -10,73 +10,41 @@
         @* table show list category and delete and edit *@
         <div class="card mb-4 table-responsive">
             <div class="card-header d-flex align-items-center justify-content-between">
-                <h5 class="mb-0">لیست دپارتمان ها</h5>
-                <small class="text-muted float-end primary-font"><a href="/admin/Home/addDepartment"
-                        class="btn btn-outline-secondary">اضافه کردن</a></small>
+                <h5 class="mb-0">لیست درخواست ها</h5>
+                <small class="text-muted float-end primary-font">تعداد کل درخواست ها : @ViewBag.allCount</small>
             </div>
             <div class="card-body">
                 <table class="table table-hover table-responsive">
                     <thead>
                         <tr>
                             <th scope="col">ردیف</th>
-                            <th scope="col">نام دپارتمان</th>
-                            <th scope="col">تعداد دیده نشده</th>
-                            <th scope="col">تعداد کل</th>
+                            <th scope="col">نام و نام خانوادگی</th>
+                            <th scope="col">کد ملی</th>
+                            <th scope="col">تلفن</th>
+                            <th scope="col">شغل</th>
+                            <th scope="col">دپارتمان شغلی</th>
                             <th scope="col">عملیات</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @if (ViewBag.Jobs != null)
+                        @if (ViewBag.Users != null)
                         {
-                            <tr>
-                                <td scope="row">-</td>
-                                <td>
-                                    همه دپارتمان ها
-                                </td>
-                                <td>
-                                    @{
-                                        List<Users> data = ViewBag.data;
-                                        if (data.Where(x => x.isRead == false).Count() == 0)
-                                        {
-                                            <span>تمام موقعیت ها دیده شدن</span>
-                                        }
-                                        else
-                                        {
-                                            <span>@data.Where(x => x.isRead == false).Count()</span>
-                                        }
-
-                                    }
-                                </td>
-                                <td>@data.Count()</td>
-                                <td>
-                                    <a href="/admin/Home/Subs/" class="btn btn-primary">مشاهده</a>
-                                </td>
-                            </tr>
                             int i = 1 + ((ViewBag.page - 1) * 10);
-                            foreach (JobDepartment item in ViewBag.Jobs)
+                            foreach (Users item in ViewBag.Users)
                             {
                                 <tr>
                                     <td scope="row">@i</td>
                                     <td>
-                                        @item.Name
+                                        @item.FirstName @item.LastName
                                     </td>
+                                    <td>@item.CodeMeli</td>
+                                    <td>@item.phone</td>
+                                    <td>@item.wishedJob</td>
+                                    <td>@item.department.Name</td>
                                     <td>
-                                        @{
-                                            if (item.Subs.Where(x => x.isRead == false).Count() == 0)
-                                            {
-                                                <span>تمام موقعیت ها دیده شدن</span>
-                                            }
-                                            else
-                                            {
-                                                <span>@item.Subs.Where(x => x.isRead == false).Count()</span>
-                                            }
-                                        }
-                                    </td>
-                                    <td>@item.Subs.Count</td>
-                                    <td>
-                                        <a href="/admin/Home/Subs?sub=@item.Id" class="btn btn-primary">مشاهده</a>
-                                        <a href="/admin/Home/RemoveDepartment/@item.Id" class="btn btn-danger"
-                                            onclick="return confirm('آیا از حذف کردن این آیتم مطمئن هستید ؟؟؟')">حذف</a>
+                                        <a href="/admin/Home/Show/@item.Id" class="btn btn-primary">مشاهده</a>
+                                        <a href="/admin/Home/Remove/@item.Id" class="btn btn-danger"
+                                            onclick="return confirm('آیا از حذف درخواست مطمئن هستید ؟')">حذف</a>
                                     </td>
                                 </tr>
                                 i++;

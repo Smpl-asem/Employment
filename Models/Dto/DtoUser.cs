@@ -1,5 +1,6 @@
 public class DtoUser
 {
+    public int department { get; set; }
     public string wishedJob { get; set; }
     public string howFind { get; set; }
     public string FirstName { get; set; }
