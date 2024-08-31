@@ -55,6 +55,11 @@ public class HomeController : Controller
     public IActionResult Show(int id)
     {
         var check = dbs.Users_tbl.Find(id);
+        if(!check.isRead){
+            check.isRead=true;
+            dbs.Users_tbl.Update(check);
+            dbs.SaveChanges();
+        }
         ViewBag.data = check;
         return View();
     }
