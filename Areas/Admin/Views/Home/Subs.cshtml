@@ -23,6 +23,7 @@
                             <th scope="col">تلفن</th>
                             <th scope="col">شغل</th>
                             <th scope="col">دپارتمان شغلی</th>
+                            <th scope="col">وضعیت</th>
                             <th scope="col">عملیات</th>
                         </tr>
                     </thead>
@@ -41,6 +42,15 @@
                                     <td>@item.phone</td>
                                     <td>@item.wishedJob</td>
                                     <td>@item.department.Name</td>
+                                    <td>@{
+                                            if(item.isRead){
+                                                <span class="text-info">دیده شده</span>
+                                            }
+                                            else{
+                                                <span class="text-danger">دیده نشده</span>
+                                            }
+                                        }
+                                    </td>
                                     <td>
                                         <a href="/admin/Home/Show/@item.Id" class="btn btn-primary">مشاهده</a>
                                         <a href="/admin/Home/Remove/@item.Id" class="btn btn-danger"
